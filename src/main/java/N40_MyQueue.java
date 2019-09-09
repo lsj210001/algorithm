@@ -22,7 +22,7 @@ public class N40_MyQueue {
      */
     public int pop() {
         if (stackPop.isEmpty()) {
-            pour();
+            pushToPop();
         }
         return stackPop.pop();
     }
@@ -32,12 +32,12 @@ public class N40_MyQueue {
      */
     public int top() {
         if (stackPop.isEmpty()) {
-            pour();
+            pushToPop();
         }
         return stackPop.peek();
     }
 
-    private void pour() {
+    private void pushToPop() {
         while (!stackPush.isEmpty()) {
             stackPop.push(stackPush.pop());
         }
